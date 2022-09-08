@@ -1,0 +1,146 @@
+/*=============== FONT LINK  ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.75rem;
+
+  /*========== Colors ==========*/
+  --primary-color: hsl(231, 69%, 60%);
+  --secondary-color: hsl(0, 94%, 66%);
+  --title-color: hsl(229, 31%, 21%);
+  --text-color: hsl(229, 8%, 60%);
+  --body-color: hsl(0, 0%, 100%);
+
+  /*========== Font and typography ==========*/
+  --body-font: "Rubik", sans-serif;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.9375rem;
+  --small-font-size: 0.8125rem;
+  --smaller-font-size: 0.75rem;
+  --smallest-font-size: 0.625rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+
+  /*========== breakpoints ==========*/
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.8125rem;
+  }
+}
+
+/*=============== BASE ===============*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: var(--body-font);
+  color: var(--text-color);
+}
+
+main {
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+a {
+  text-decoration: none;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*=============== REUSEABLE CSS CLASSES ===============*/
+.container {
+  max-width: 60.5rem;
+  margin-inline: 2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+}
+
+.section__title {
+}
+
+/* =============== HEADER =============== */
+
+/* =============== HOME =============== */
+
+/* =============== FEATURES =============== */
+
+/* =============== EXTENSIONS =============== */
+
+/* =============== QUESTIONS =============== */
+
+/* =============== CTA =============== */
+
+/* =============== FOOTER =============== */
+
+/*=============== BREAKPOINTS ===============*/
+@media screen and (min-width: 375px) {
+}
+
+@media screen and (min-width: 576px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 992px) {
+}
+
+@media screen and (min-width: 1280px) {
+}
