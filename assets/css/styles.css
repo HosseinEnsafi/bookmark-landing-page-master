@@ -3,7 +3,7 @@
 
 /*=============== VARIABLES CSS ===============*/
 :root {
-  --header-height: 3.75rem;
+  --header-height: 6.25rem;
 
   /*========== Colors ==========*/
   --primary-color: hsl(231, 69%, 60%);
@@ -63,7 +63,7 @@ html:focus-within {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 120vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: var(--body-font);
@@ -98,6 +98,13 @@ select {
   font: inherit;
 }
 
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 /*=============== REUSEABLE CSS CLASSES ===============*/
 .container {
   max-width: 60.5rem;
@@ -115,7 +122,116 @@ select {
 .section__title {
 }
 
-/* =============== HEADER =============== */
+/* =============== HEADER & NAV =============== */
+.header {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__brand {
+  position: relative;
+  z-index: 10;
+  margin-top: 0.5rem;
+}
+
+.nav__brand * {
+  transition: all 0.2s 0.1s;
+}
+
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    padding: 2.5rem 1.875rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-100%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(229, 31%, 21%, 0.95);
+    backdrop-filter: blur(2px);
+    transition: transform 400ms;
+  }
+
+  .mobile-menu--active .nav__menu {
+    transform: initial;
+  }
+
+  .mobile-menu--active .nav__toggle {
+    display: none;
+  }
+
+  .mobile-menu--active .nav__brand {
+    position: fixed;
+  }
+
+  .mobile-menu--active .nav__brand * {
+    fill: white;
+  }
+
+  .mobile-menu--active .bookmark-icon {
+    fill: hsla(229, 31%, 21%, 0.95);
+  }
+
+  .nav__list {
+    width: 100%;
+    margin-top: 6rem;
+  }
+
+  .nav__item {
+    width: 100%;
+    border-top: 1px solid hsla(0, 0%, 70%, 0.2);
+    padding: 1.25rem 0;
+  }
+
+  .nav__item:last-child {
+    padding: 0.75rem 0;
+  }
+
+  .nav__link:any-link {
+    display: block;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    transition: color 0.2s;
+  }
+
+  .nav__link--login {
+    border: 0.0625rem solid white;
+    padding: 0.5rem 0;
+  }
+
+  .nav__social-icons {
+    margin-top: auto;
+    display: flex;
+    gap: 2rem;
+  }
+}
+
+.nav__close {
+  position: absolute;
+  right: 2.5rem;
+  top: 2.5rem;
+  transform: translate(0%, 50%);
+}
+
+.nav__toggle {
+  padding: 0.375rem;
+}
 
 /* =============== HOME =============== */
 
@@ -137,6 +253,12 @@ select {
 }
 
 @media screen and (min-width: 768px) {
+  .nav__close {
+    display: none;
+  }
+  .nav__toggle {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 992px) {
