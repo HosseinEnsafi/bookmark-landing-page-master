@@ -14,7 +14,7 @@
 
   /*========== Font and typography ==========*/
   --body-font: "Rubik", sans-serif;
-  --h1-font-size: 1.75rem;
+  --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
   --normal-font-size: 0.9375rem;
@@ -108,7 +108,8 @@ button {
 /*=============== REUSEABLE CSS CLASSES ===============*/
 .container {
   max-width: 60.5rem;
-  margin-inline: 1.5rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
 }
 
 .grid {
@@ -117,7 +118,7 @@ button {
 }
 
 .section {
-  padding: 4rem 0 2.5rem 0;
+  padding: 4rem 0 2rem 0;
 }
 
 .section__title {
@@ -126,11 +127,12 @@ button {
 .btn {
   display: inline-block;
   margin-bottom: 0;
+  font-size: 0.875rem;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
-  padding: 0.75rem 0.9375rem;
+  padding: 0.625rem 0.75rem;
   border-radius: 0.3125rem;
 }
 
@@ -273,17 +275,19 @@ button {
   width: 100rem;
   height: 50vw;
   left: 14vw;
-  top: 6vh;
+  top: 4vh;
   background-color: var(--primary-color);
   border-radius: 50rem;
 }
 
 .hero__img {
-  width: 100%;
+}
+
+.hero__group {
 }
 
 .hero__data {
-  padding-inline: 2.5rem;
+  padding-inline: 1rem;
 }
 
 .hero__title {
@@ -297,6 +301,13 @@ button {
 }
 
 .hero__actions {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.hero__actions button {
 }
 
 /* =============== FEATURES =============== */
