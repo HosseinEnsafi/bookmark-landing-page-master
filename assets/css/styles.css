@@ -14,8 +14,8 @@
 
   /*========== Font and typography ==========*/
   --body-font: "Rubik", sans-serif;
-  --h1-font-size: 1.5rem;
-  --h2-font-size: 1.25rem;
+  --h1-font-size: 2rem;
+  --h2-font-size: 1.75rem;
   --h3-font-size: 1rem;
   --normal-font-size: 0.9375rem;
   --small-font-size: 0.8125rem;
@@ -35,9 +35,9 @@
 
 @media screen and (min-width: 968px) {
   :root {
-    --h1-font-size: 2.25rem;
-    --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 2.25rem;
+    --h3-font-size: 1.75rem;
     --normal-font-size: 1rem;
     --small-font-size: 0.875rem;
     --smaller-font-size: 0.8125rem;
@@ -122,6 +122,8 @@ button {
 }
 
 .section__title {
+  text-align: center;
+  font-size: var(--h2-font-size);
 }
 
 .btn {
@@ -264,7 +266,7 @@ button {
 
 .hero__container {
   position: relative;
-  gap: 3rem;
+  gap: 4rem;
   text-align: center;
 }
 
@@ -273,11 +275,11 @@ button {
   position: absolute;
   z-index: -1;
   width: 100rem;
-  height: 50vw;
-  left: 14vw;
-  top: 4vh;
+  height: 53vw;
+  left: 20vw;
+  top: 2.5rem;
   background-color: var(--primary-color);
-  border-radius: 50rem;
+  border-radius: 100rem;
 }
 
 .hero__img {
@@ -311,7 +313,53 @@ button {
 }
 
 /* =============== FEATURES =============== */
+.features {
+}
 
+.features__container {
+}
+
+.features__title {
+  margin-bottom: 0.5rem;
+}
+
+.features__description {
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 2.25rem;
+}
+
+.features__tabs {
+  gap: 0;
+  margin-bottom: 3rem;
+}
+
+.features__tab {
+  padding: 1.25rem 0;
+  border-top: 1px solid hsla(231, 58%, 55%, 0.12);
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.125rem;
+}
+
+.features__tab--active {
+  color: hsl(229, 31%, 21%);
+}
+
+.features__tab:last-child {
+  border-bottom: 1px solid hsla(231, 58%, 55%, 0.12);
+}
+
+.features__content {
+  display: none;
+}
+
+.features__content--active {
+  display: block;
+}
+
+.features__content {
+}
 /* =============== EXTENSIONS =============== */
 
 /* =============== QUESTIONS =============== */
