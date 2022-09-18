@@ -37,6 +37,8 @@ tabsContainer.addEventListener("click", (e) => {
   );
   const tabId = e.target.attributes["data-tab"].value;
 
+  e.target.classList.add("features__tab--active");
+
   document
     .querySelector(`.features__content--${tabId}`)
     .classList.add("features__content--active");
