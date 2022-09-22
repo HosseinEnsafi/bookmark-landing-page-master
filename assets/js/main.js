@@ -8,7 +8,8 @@ const navMenu = document.getElementById("nav-menu"),
   navLinks = document.querySelectorAll("header .nav__item"),
   tabs = document.querySelectorAll(".features__tab"),
   tabsContainer = document.querySelector(".features__tabs"),
-  tabsContent = document.querySelectorAll(".features__content");
+  tabsContent = document.querySelectorAll(".features__content"),
+  accItemHeaders = document.querySelectorAll(".accordion__header");
 
 // ================= SHOW SHOW =================
 navToggle.addEventListener("click", (e) => {
@@ -42,4 +43,20 @@ tabsContainer.addEventListener("click", (e) => {
   document
     .querySelector(`.features__content--${tabId}`)
     .classList.add("features__content--active");
+});
+
+// =================  FAQ ACCORDION  =================
+accItemHeaders.forEach((accHeader) => {
+  accHeader.addEventListener("click", (e) => {
+    const accItem = accHeader.closest(".accordion__item");
+    const accContentContainer = accHeader.nextElementSibling;
+    accItem.classList.toggle("active");
+
+    if (accItem.classList.contains("active")) {
+      accContentContainer.style.minHeight =
+        accContentContainer.scrollHeight + "px";
+    } else {
+      accContentContainer.style.minHeight = 0;
+    }
+  });
 });
