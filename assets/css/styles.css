@@ -117,6 +117,17 @@ button {
   gap: 1.5rem;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 .section {
   padding: 5rem 0 2rem 0;
 }
@@ -492,6 +503,11 @@ button {
 }
 
 .accordion__item {
+  border-bottom: 1px solid hsla(0, 100%, 0%, 0.2);
+}
+
+.accordion__item.active {
+  padding-bottom: 1rem;
 }
 
 .accordion__header {
@@ -505,7 +521,7 @@ button {
   padding-top: 1.5rem;
   cursor: pointer;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid hsla(0, 100%, 0%, 0.2);
+  user-select: none;
 }
 
 .accordion__header-icon {
@@ -528,7 +544,61 @@ button {
 
 .accordion__content {
 }
+
+.accordion__action {
+  display: grid;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.accordion__btn {
+  margin-inline: auto;
+}
 /* =============== CTA =============== */
+.cta {
+  background-color: var(--primary-color);
+  padding: 2rem 0;
+}
+
+.cta__container {
+}
+
+.cta__subtitle {
+  color: white;
+  letter-spacing: 0.2rem;
+  word-spacing: 0.3rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.cta__title {
+  color: white;
+  margin-top: 1rem;
+}
+
+.cta__form-container {
+  display: flex;
+  flex-flow: column wrap;
+  margin-inline: auto;
+  width: 80%;
+  gap: 1rem;
+}
+
+.cta__input {
+  padding: 0.35rem 0.25rem 0.35rem 1rem;
+  border-radius: 0.25rem;
+  outline: none;
+  border: none;
+}
+.cta__input::placeholder {
+  font-size: 0.875rem;
+  color: hsl(229, 8%, 60%);
+}
+
+.cta__btn {
+  background-color: var(--secondary-color);
+  padding: 0.5rem 0.375rem;
+}
 
 /* =============== FOOTER =============== */
 
