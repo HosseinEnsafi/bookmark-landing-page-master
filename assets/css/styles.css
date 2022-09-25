@@ -601,6 +601,46 @@ button {
 }
 
 /* =============== FOOTER =============== */
+.footer {
+  background-color: var(--title-color);
+  padding: 2rem 4rem 1.5rem 4rem;
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer__logo {
+  fill: white;
+}
+
+.footer__list {
+  margin-top: 1rem;
+  text-align: center;
+  line-height: 3;
+}
+
+.footer__item {
+}
+
+.footer__link:any-link {
+  color: white;
+  transition: color 200ms 20ms;
+}
+
+.footer__link:hover {
+  color: var(--secondary-color);
+}
+
+.footer__icons {
+  display: flex;
+  width: 12.5rem;
+  justify-content: center;
+  gap: 2rem;
+}
 
 /*=============== BREAKPOINTS ===============*/
 @media screen and (min-width: 375px) {
