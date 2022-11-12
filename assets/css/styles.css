@@ -87,8 +87,8 @@ a {
 
 img,
 picture {
-  max-width: 100%;
-  display: block;
+  /* max-width: 100%;
+  display: block; */
 }
 
 input,
@@ -107,7 +107,7 @@ button {
 
 /*=============== REUSEABLE CSS CLASSES ===============*/
 .container {
-  max-width: 60.5rem;
+  max-width: 75rem;
   margin-inline: auto;
   padding-inline: 1.5rem;
 }
@@ -288,7 +288,10 @@ button {
 
 .hero__container {
   position: relative;
-  gap: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 4rem; */
   text-align: center;
 }
 
@@ -304,7 +307,11 @@ button {
   border-radius: 100rem;
 }
 
+.hero__img-container {
+}
+
 .hero__img {
+  width: 100%;
 }
 
 .hero__group {
@@ -317,6 +324,10 @@ button {
 .hero__title {
   font-size: var(--h1-font-size);
   margin-bottom: 1rem;
+  font-size: 3rem;
+  letter-spacing: -0.15px;
+  line-height: 4rem;
+  font-weight: 500;
 }
 
 .hero__description {
@@ -659,21 +670,25 @@ button {
   }
 
   .nav__container {
-    padding-left: 4rem;
+    padding-inline: 4rem 3rem;
   }
 
   .nav__list {
     display: flex;
     align-items: center;
     height: 3rem;
-    gap: 0.5rem;
+  }
+
+  .nav__item {
+    margin-right: auto;
   }
 
   .nav__link:any-link {
     color: var(--title-color);
+    display: block;
     font-size: 0.9375rem;
     transition: color 200ms;
-    padding: 0.75rem 1.75rem;
+    padding: 0.75rem 1.5rem;
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 0.0938rem;
@@ -681,6 +696,7 @@ button {
 
   .nav__link--login:any-link {
     background-color: var(--secondary-color);
+    margin-left: 1.5rem;
     border-radius: 0.3125rem;
     color: white;
     transition: 200ms;
@@ -695,12 +711,34 @@ button {
   .nav__link:hover {
     color: var(--secondary-color);
   }
+
+  .hero__container {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .hero__container::before {
+    top: 5.5rem;
+    left: 60.5vw;
+    width: 200rem;
+    height: 23rem;
+  }
+
+  .hero__group {
+    flex: 1 0 30rem;
+  }
+
+  .hero__img-container {
+    order: 1;
+  }
+
+  .hero__img {
+    width: auto;
+    /* max-width: initial; */
+  }
 }
 
 @media screen and (min-width: 992px) {
-  .nav__container {
-    padding-right: 0;
-  }
 }
 
 @media screen and (min-width: 1280px) {
