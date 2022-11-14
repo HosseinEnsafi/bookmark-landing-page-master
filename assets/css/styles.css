@@ -38,7 +38,7 @@
     --h1-font-size: 2.5rem;
     --h2-font-size: 2.25rem;
     --h3-font-size: 1.75rem;
-    --normal-font-size: 1rem;
+    --normal-font-size: 1.0625rem;
     --small-font-size: 0.875rem;
     --smaller-font-size: 0.8125rem;
   }
@@ -87,8 +87,8 @@ a {
 
 img,
 picture {
-  /* max-width: 100%;
-  display: block; */
+  max-width: 100%;
+  display: block;
 }
 
 input,
@@ -147,23 +147,36 @@ button {
 .btn {
   display: inline-block;
   margin-bottom: 0;
-  font-size: 0.875rem;
+  font-size: var(--normal-font-size);
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
-  padding: 0.75rem 0.9375rem;
+  padding: 0.9375rem 1.125rem;
   border-radius: 0.3125rem;
+  transition: all 250ms;
 }
 
 .btn--solid {
   background-color: var(--primary-color);
   color: white;
 }
+
+.btn--solid:hover {
+  background-color: var(--body-color);
+  color: var(--primary-color);
+  outline: 1px solid var(--primary-color);
+}
+
 .btn--outline {
   background-color: hsl(0deg 0% 97%);
   box-shadow: 0px 8px 8px -4px rgb(73 93 207 / 20%);
   color: hsl(229, 31%, 21%);
+}
+
+.btn--outline:hover {
+  background-color: var(--body-color);
+  outline: 1px solid var(--primary-color);
 }
 
 /* =============== HEADER & NAV =============== */
@@ -323,14 +336,13 @@ button {
 
 .hero__title {
   font-size: var(--h1-font-size);
-  margin-bottom: 1rem;
-  font-size: 3rem;
+  margin: 1rem 0 1.5rem 0;
   letter-spacing: -0.15px;
-  line-height: 4rem;
+  line-height: 3rem;
   font-weight: 500;
 }
 
-.hero__description {
+.hero__desc {
   margin-bottom: 1.5rem;
   font-size: 1.125rem;
 }
@@ -359,6 +371,7 @@ button {
   z-index: -1;
   width: 100rem;
   height: 53vw;
+  max-height: 20rem;
   right: 20vw;
   top: 33.5rem;
   background-color: var(--primary-color);
@@ -372,11 +385,12 @@ button {
 .features__description {
   text-align: center;
   line-height: 1.6;
-  margin-bottom: 2.25rem;
+  margin-bottom: 3.25rem;
 }
 
 .features__tabs {
-  gap: 0;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 3rem;
 }
 
@@ -416,14 +430,21 @@ button {
   margin-top: 5rem;
   display: none;
 }
+
 .features__content.features__content--active {
-  display: grid;
-  justify-items: center;
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
   gap: 0.75rem;
 }
 
 .features__img-wrapper {
   height: 75vw;
+  max-height: 26rem;
+}
+
+.features__content--1 .features__img-wrapper {
+  height: 69vw;
 }
 
 .features__img {
@@ -435,10 +456,11 @@ button {
 
 .features__heading {
   margin-bottom: 8px;
-  font-size: 1.375rem;
+  font-size: var(--h2-font-size);
 }
 
 .features__desc {
+  font-size: var(--normal-font-size);
   line-height: 1.6;
 }
 
@@ -714,12 +736,17 @@ button {
 
   .hero__container {
     flex-direction: row;
-    gap: 2rem;
+    gap: 4rem;
+  }
+
+  .hero__title,
+  .hero__desc {
+    text-align: start;
   }
 
   .hero__container::before {
     top: 5.5rem;
-    left: 60.5vw;
+    left: 62.5vw;
     width: 200rem;
     height: 23rem;
   }
@@ -734,7 +761,59 @@ button {
 
   .hero__img {
     width: auto;
-    /* max-width: initial; */
+    max-width: initial;
+  }
+
+  .hero__actions {
+    justify-content: flex-start;
+  }
+
+  .features__container::before {
+    right: 51vw;
+    top: 23.5rem;
+  }
+
+  .features__title,
+  .features__description {
+    max-width: 34rem;
+    margin-inline: auto;
+  }
+
+  .features__tabs {
+    flex-direction: row;
+    justify-content: center;
+    max-width: 37.5rem;
+    margin-inline: auto;
+  }
+
+  .features__tab {
+    flex: 1 1 auto;
+  }
+
+  .features__content.features__content--active {
+    flex-direction: row;
+  }
+
+  .features__img-wrapper,
+  .features__content--1 .features__img-wrapper {
+    display: flex;
+    flex: 0 1 50%;
+    width: 100%;
+    height: auto;
+    justify-content: flex-end;
+    min-width: 0;
+  }
+
+  .features__img {
+    width: auto;
+    height: 100%;
+    max-width: initial;
+  }
+
+  .features__data-group {
+    flex: 1 0 20rem;
+    padding: 2rem 0 0 2rem;
+    align-self: flex-start;
   }
 }
 
