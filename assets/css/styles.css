@@ -16,7 +16,7 @@
   --body-font: "Rubik", sans-serif;
   --h1-font-size: 2rem;
   --h2-font-size: 1.75rem;
-  --h3-font-size: 1rem;
+  --h3-font-size: 1.375rem;
   --normal-font-size: 0.9375rem;
   --small-font-size: 0.8125rem;
   --smaller-font-size: 0.75rem;
@@ -41,6 +41,12 @@
     --normal-font-size: 1.0625rem;
     --small-font-size: 0.875rem;
     --smaller-font-size: 0.8125rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  :root {
+    --normal-font-size: 18px;
   }
 }
 
@@ -769,8 +775,8 @@ button {
   }
 
   .features__container::before {
-    right: 51vw;
-    top: 23.5rem;
+    right: 54vw;
+    top: 26.5rem;
   }
 
   .features__title,
@@ -797,7 +803,7 @@ button {
   .features__img-wrapper,
   .features__content--1 .features__img-wrapper {
     display: flex;
-    flex: 0 1 50%;
+    flex: 0 1 42%;
     width: 100%;
     height: auto;
     justify-content: flex-end;
@@ -814,6 +820,13 @@ button {
     flex: 1 0 20rem;
     padding: 2rem 0 0 2rem;
     align-self: flex-start;
+    text-align: start;
+  }
+
+  .features__heading {
+  }
+
+  .features__desc {
   }
 }
 
