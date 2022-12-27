@@ -29,10 +29,9 @@
   /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
-
-  /*========== breakpoints ==========*/
 }
 
+/*========== breakpoints ==========*/
 @media screen and (min-width: 968px) {
   :root {
     --h1-font-size: 2.5rem;
@@ -64,7 +63,7 @@ ol {
   list-style: none;
 }
 
-html:focus-within {
+html {
   scroll-behavior: smooth;
 }
 
@@ -95,6 +94,7 @@ img,
 picture {
   max-width: 100%;
   display: block;
+  height: auto;
 }
 
 input,
@@ -135,7 +135,7 @@ button {
 }
 
 .section {
-  padding: 5rem 0 2rem 0;
+  padding: 7rem 0 2rem 0;
 }
 
 .section__title {
@@ -146,6 +146,8 @@ button {
 
 .section__desc {
   text-align: center;
+  margin-inline: auto;
+  max-width: 40rem;
   font-size: 1.125rem;
   margin-bottom: 1.5rem;
 }
@@ -189,7 +191,6 @@ button {
 .header {
   height: var(--header-height);
   display: flex;
-  align-items: center;
   width: 100%;
 }
 
@@ -228,7 +229,7 @@ button {
     width: 100%;
     height: 100%;
     background-color: hsla(229, 31%, 21%, 0.95);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(0.125rem);
     transition: transform 400ms;
   }
 
@@ -303,6 +304,7 @@ button {
 
 /* =============== HERO =============== */
 .hero {
+  padding: 5rem 0 2rem 0;
 }
 
 .hero__container {
@@ -350,7 +352,6 @@ button {
 
 .hero__desc {
   margin-bottom: 1.5rem;
-  font-size: 1.125rem;
 }
 
 .hero__actions {
@@ -389,9 +390,8 @@ button {
 }
 
 .features__description {
-  text-align: center;
   line-height: 1.6;
-  margin-bottom: 3.25rem;
+  font-size: 1.0625rem;
 }
 
 .features__tabs {
@@ -458,6 +458,7 @@ button {
 
 .features__data-group {
   text-align: center;
+  margin-top: 2rem;
 }
 
 .features__heading {
@@ -466,7 +467,6 @@ button {
 }
 
 .features__desc {
-  font-size: var(--normal-font-size);
   line-height: 1.6;
 }
 
@@ -690,6 +690,9 @@ button {
 }
 
 @media screen and (min-width: 576px) {
+  .faq__container {
+    max-width: 33.75rem;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -757,7 +760,7 @@ button {
     height: 23rem;
   }
 
-  .hero__group {
+  .hero__content {
     flex: 1 0 30rem;
   }
 
@@ -803,7 +806,7 @@ button {
   .features__img-wrapper,
   .features__content--1 .features__img-wrapper {
     display: flex;
-    flex: 0 1 42%;
+    flex: 0 1 45%;
     width: 100%;
     height: auto;
     justify-content: flex-end;
@@ -821,12 +824,28 @@ button {
     padding: 2rem 0 0 2rem;
     align-self: flex-start;
     text-align: start;
+    margin-top: 0;
   }
 
   .features__heading {
   }
 
   .features__desc {
+  }
+
+  .extension__cards {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 952px) {
+  .extension__card:nth-child(2) {
+    transform: translateY(2rem);
+  }
+
+  .extension__card:nth-child(3) {
+    transform: translateY(4rem);
   }
 }
 
